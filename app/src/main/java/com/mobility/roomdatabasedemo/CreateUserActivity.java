@@ -6,12 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 
 public class CreateUserActivity extends AppCompatActivity {
-
-
     private EditText firstNameEditText;
     private EditText lastNameEditText;
     private EditText emailEditText;

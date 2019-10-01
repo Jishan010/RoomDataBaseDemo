@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter adapter;
     List<User> userList;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
