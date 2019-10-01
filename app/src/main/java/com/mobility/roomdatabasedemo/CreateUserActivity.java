@@ -51,7 +51,6 @@ public class CreateUserActivity extends AppCompatActivity {
             this.email = email;
         }
 
-
         @Override
         protected String doInBackground(Void... voids) {
             User user = new User(firstName, lastName, email);
@@ -65,7 +64,6 @@ public class CreateUserActivity extends AppCompatActivity {
             Intent intent = new Intent(CreateUserActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
-
         }
 
     }

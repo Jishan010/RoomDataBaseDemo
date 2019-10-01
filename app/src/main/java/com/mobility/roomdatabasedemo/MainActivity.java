@@ -38,12 +38,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
         initRecycleView();
-
+        //getting list of data from room database in background thread.
         new AsyncTaskRunner().execute();
-
     }
 
     private void initRecycleView() {
@@ -75,13 +72,16 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-
-
             adapter = new UserListRecycleAdapter(MainActivity.this, userList);
             recyclerView.setAdapter(adapter);
             adapter.notifyDataSetChanged();
         }
     }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //to destroy the Room database object
+        UserDataBase.getInstance(MainActivity.this).cleanUp();
+    }
 }
